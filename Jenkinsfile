@@ -10,7 +10,7 @@ node {
 	  jdk 'JAVA'
       environment {
 
-      sonar_url = 'http://18.223.168.211:9000'
+      sonar_url = 'http://13.59.86.99:9000'
       sonar_username = 'admin'
       sonar_password = 'admin'
 }
