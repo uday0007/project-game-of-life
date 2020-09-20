@@ -21,10 +21,7 @@ node {
               }
          }
           
-    stage("publish artifactory") {
-        
-    nexusArtifactUploader artifacts: [[artifactId: 'gameoflife', classifier: '', file: '/var/lib/jenkins/workspace/pipeline-project/gameoflife-build/target/gameoflife-build-1.0-SNAPSHOT.jar', type: 'jar']], credentialsId: '3.8.20200310-130318.c482b58', groupId: 'com.wakaleo.gameoflife', nexusUrl: 'localhost:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'release', version: '4.0.0'
-    }
+    
         
         
     }
