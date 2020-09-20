@@ -14,12 +14,16 @@ node {
       sonar_username = 'admin'
       sonar_password = 'admin'
 }
-   stage("build & SonarQube analysis") {
-           
-              withSonarQubeEnv('SonarQube') {
-                 sh 'mvn clean package sonar:sonar'
-              }
-         }
+	   
+   stage ('Compile and Build')
+   {
+      steps 
+	  {
+         sh '''
+         mvn clean install -U  -Dmaven.test.skip=true 
+         '''
+     }
+   }
    stage ('Docker build') {
    steps {
    sh '''
