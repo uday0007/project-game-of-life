@@ -20,6 +20,23 @@ node {
                  sh 'mvn clean package sonar:sonar'
               }
          }
+   stage ('Docker build') {
+   steps {
+   sh '''
+      cd ${WORKSPACE}/jenkins-pipeline-dockerfile
+      docker build -t mudaykumar/game-of-life-jenkins:v1 --pull=true --file=Dockerfile ${WORKSPACE}
+
+    '''
+        }
+    }
+   stage('Push docker image') {
+     steps {
+     sh '''
+       docker login --username mudaykumar --password 19124909@a
+       docker push mudaykumar/game-of-life-jenkins:v1
+      '''
+           }
+    }
           
     
         
