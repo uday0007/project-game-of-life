@@ -18,7 +18,7 @@ spec:
       - name: nginx
         image: mudaykumar/game-of-life-jenkins:v1
         imagePullPolicy: Always
-      restartPolicy: Always
+        restartPolicy: Always
         envFrom: 
           - configMapRef:
               name: demo-configmap
