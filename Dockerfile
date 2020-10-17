@@ -1,5 +1,4 @@
 
-FROM ubuntu
+FROM httpd
 MAINTAINER uday
-RUN apt-get update -y && apt-get install default-jdk -y && apt-get install maven -y
-COPY gameoflife-build/target/gameoflife-build-1.0-SNAPSHOT.jar /tmp/
+COPY gameoflife-build/target/gameoflife-build-1.0-SNAPSHOT.jar /var/www/html/
